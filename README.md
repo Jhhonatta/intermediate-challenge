@@ -1,1 +1,3 @@
-# intermediate-challenge
+Iniciar aplicação:
+
+Yarn dev
