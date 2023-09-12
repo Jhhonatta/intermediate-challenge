@@ -5,7 +5,15 @@ export const ContainerDashBoard = styled.div`
     font-family: Roboto;
     font-weight: 700;
     font-size: 32px;
-    text-align: Center;
     color: #ffffff;
+
+    display: flex;
+    justify-content: center;
+  }
+
+  .containerSearch {
+    display: flex;
+    justify-content: center;
+    width: 100%;
   }
 `;
