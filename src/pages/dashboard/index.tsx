@@ -1,5 +1,6 @@
 import { ContainerDashBoard } from "./style";
 import Search from "../../components/search";
+import ListUsers from "../../components/listUsers";
 
 const Dashboard = () => {
   return (
@@ -9,6 +10,7 @@ const Dashboard = () => {
         <div className="containerSearch">
           <Search />
         </div>
+        <ListUsers />
       </ContainerDashBoard>
     </>
   );
