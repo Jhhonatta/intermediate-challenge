@@ -1,17 +1,42 @@
 import api from "../../services/api";
 import { ContainerListUser } from "./style";
+import { useState, useEffect } from "react";
 
-const listUser = async () => {
-  const result = await api.get(
-    `?page=1&results=10&seed=abc&inc=gender,name,dob,id`
-  );
-  const list = result.data.results;
-
-  return list;
-};
+interface User {
+  gender: string;
+  name: {
+    title: string;
+    first: string;
+    last: string;
+  };
+  dob: {
+    date: string;
+    age: number;
+  };
+  id: {
+    name: string;
+    value: string | null;
+  };
+}
 
 const ListUsers = () => {
-  listUser();
+  const [list, setList] = useState<User[]>([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const result = await api.get(
+          `?page=1&results=10&seed=abc&inc=gender,name,dob,id`
+        );
+        setList(result.data.results);
+        console.log(list);
+      } catch (error) {
+        console.error("Erro ao buscar dados da API:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   return (
     <>
@@ -26,87 +51,17 @@ const ListUsers = () => {
           <li className="columnLi">Actions</li>
         </ul>
 
-        <ul className="columnTables">
-          <li>1561516546151651</li>
-          <li>First Name</li>
-          <li>Last Name</li>
-          <li>Title</li>
-          <li>Date</li>
-          <li>Age</li>
-          <li>View Profile</li>
-        </ul>
-        <ul className="columnTables">
-          <li>1561516546151651</li>
-          <li>First Name</li>
-          <li>Last Name</li>
-          <li>Title</li>
-          <li>Date</li>
-          <li>Age</li>
-          <li>View Profile</li>
-        </ul>
-        <ul className="columnTables">
-          <li>1561516546151651</li>
-          <li>First Name</li>
-          <li>Last Name</li>
-          <li>Title</li>
-          <li>Date</li>
-          <li>Age</li>
-          <li>View Profile</li>
-        </ul>
-        <ul className="columnTables">
-          <li>1561516546151651</li>
-          <li>First Name</li>
-          <li>Last Name</li>
-          <li>Title</li>
-          <li>Date</li>
-          <li>Age</li>
-          <li>View Profile</li>
-        </ul>
-        <ul className="columnTables">
-          <li>1561516546151651</li>
-          <li>First Name</li>
-          <li>Last Name</li>
-          <li>Title</li>
-          <li>Date</li>
-          <li>Age</li>
-          <li>View Profile</li>
-        </ul>
-        <ul className="columnTables">
-          <li>1561516546151651</li>
-          <li>First Name</li>
-          <li>Last Name</li>
-          <li>Title</li>
-          <li>Date</li>
-          <li>Age</li>
-          <li>View Profile</li>
-        </ul>
-        <ul className="columnTables">
-          <li>1561516546151651</li>
-          <li>First Name</li>
-          <li>Last Name</li>
-          <li>Title</li>
-          <li>Date</li>
-          <li>Age</li>
-          <li>View Profile</li>
-        </ul>
-        <ul className="columnTables">
-          <li>1561516546151651</li>
-          <li>First Name</li>
-          <li>Last Name</li>
-          <li>Title</li>
-          <li>Date</li>
-          <li>Age</li>
-          <li>View Profile</li>
-        </ul>
-        <ul className="columnTables">
-          <li>1561516546151651</li>
-          <li>First Name</li>
-          <li>Last Name</li>
-          <li>Title</li>
-          <li>Date</li>
-          <li>Age</li>
-          <li>View Profile</li>
-        </ul>
+        {list.map((elem, index) => (
+          <ul className="columnTables" key={index}>
+            <li>{elem.id.value || "Null"}</li>
+            <li>{elem.name.first}</li>
+            <li>{elem.name.last}</li>
+            <li>{elem.name.title}</li>
+            <li>{elem.dob.date.split("T")[0]}</li>
+            <li>{elem.dob.age}</li>
+            <li>View Profile</li>
+          </ul>
+        ))}
       </ContainerListUser>
     </>
   );

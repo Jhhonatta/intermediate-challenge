@@ -4,6 +4,7 @@ export const ContainerListUser = styled.div`
   display: flex;
   margin-top: 10px;
   overflow: scroll;
+  overflow-y: hidden;
 
   ul {
     width: max-content;
