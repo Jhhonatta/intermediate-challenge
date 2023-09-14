@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const ContainerListUser = styled.div`
   display: flex;
   margin-top: 10px;
+  overflow: scroll;
 
   ul {
     width: max-content;
@@ -25,5 +26,8 @@ export const ContainerListUser = styled.div`
     font-family: Poppins;
     height: 50px;
     width: 200px;
+
+    display: flex;
+    align-items: center;
   }
 `;
