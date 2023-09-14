@@ -14,6 +14,10 @@ export const ContainerListUser = styled.div`
     background-color: #811ac0;
     width: 100px;
     margin-right: 3px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   li {
