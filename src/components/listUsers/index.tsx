@@ -1,6 +1,18 @@
+import api from "../../services/api";
 import { ContainerListUser } from "./style";
 
+const listUser = async () => {
+  const result = await api.get(
+    `?page=1&results=10&seed=abc&inc=gender,name,dob,id`
+  );
+  const list = result.data.results;
+
+  return list;
+};
+
 const ListUsers = () => {
+  listUser();
+
   return (
     <>
       <ContainerListUser>
@@ -13,6 +25,7 @@ const ListUsers = () => {
           <li className="columnLi">Age</li>
           <li className="columnLi">Actions</li>
         </ul>
+
         <ul className="columnTables">
           <li>1561516546151651</li>
           <li>First Name</li>
