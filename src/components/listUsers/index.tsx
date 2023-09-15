@@ -52,7 +52,7 @@ const ListUsers = () => {
         </ul>
 
         {list.map((elem, index) => (
-          <ul className="columnTables" key={index}>
+          <ul className="columnData" key={index}>
             <li>{elem.id.value || "Null"}</li>
             <li>{elem.name.first}</li>
             <li>{elem.name.last}</li>

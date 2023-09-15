@@ -10,12 +10,19 @@ export const ContainerListUser = styled.div`
     width: max-content;
   }
 
+  .columnTables {
+    margin-right: 5px;
+    position: sticky;
+    left: 0;
+    z-index: 1;
+  }
+
   .columnLi {
     color: #ffffff;
     font-family: Poppins;
     background-color: #811ac0;
     width: 100px;
-    margin-right: 3px;
+    gap: 3px;
 
     display: flex;
     justify-content: center;
@@ -30,5 +37,33 @@ export const ContainerListUser = styled.div`
 
     display: flex;
     align-items: center;
+  }
+
+  @media (min-width: 1024px) {
+    flex-direction: column;
+
+    .columnTables {
+      display: flex;
+      width: 100%;
+      margin-right: 0;
+    }
+
+    li {
+      width: 100%;
+      justify-content: center;
+    }
+
+    .columnLi {
+      width: 100%;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .columnData {
+      display: flex;
+      width: 100%;
+    }
   }
 `;
