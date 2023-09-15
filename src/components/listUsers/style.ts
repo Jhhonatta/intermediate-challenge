@@ -10,12 +10,19 @@ export const ContainerListUser = styled.div`
     width: max-content;
   }
 
+  .columnTables {
+    margin-right: 5px;
+    position: sticky;
+    left: 0;
+    z-index: 1;
+  }
+
   .columnLi {
     color: #ffffff;
     font-family: Poppins;
     background-color: #811ac0;
     width: 100px;
-    margin-right: 3px;
+    gap: 3px;
 
     display: flex;
     justify-content: center;
