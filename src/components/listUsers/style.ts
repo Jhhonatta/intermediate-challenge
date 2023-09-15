@@ -31,4 +31,32 @@ export const ContainerListUser = styled.div`
     display: flex;
     align-items: center;
   }
+
+  @media (min-width: 1024px) {
+    flex-direction: column;
+
+    .columnTables {
+      display: flex;
+      width: 100%;
+      margin-right: 0;
+    }
+
+    li {
+      width: 100%;
+      justify-content: center;
+    }
+
+    .columnLi {
+      width: 100%;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .columnData {
+      display: flex;
+      width: 100%;
+    }
+  }
 `;
