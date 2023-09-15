@@ -41,6 +41,7 @@ export const ContainerListUser = styled.div`
 
   @media (min-width: 1024px) {
     flex-direction: column;
+    overflow: hidden;
 
     .columnTables {
       display: flex;
@@ -51,6 +52,7 @@ export const ContainerListUser = styled.div`
     li {
       width: 100%;
       justify-content: center;
+      height: 37px;
     }
 
     .columnLi {
