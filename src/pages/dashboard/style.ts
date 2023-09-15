@@ -16,4 +16,10 @@ export const ContainerDashBoard = styled.div`
     justify-content: center;
     width: 100%;
   }
+
+  @media (min-width: 1024px) {
+    .containerSearch {
+      justify-content: end;
+    }
+  }
 `;

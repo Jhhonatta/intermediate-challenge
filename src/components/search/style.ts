@@ -2,8 +2,8 @@ import styled from "styled-components";
 
 export const Input = styled.input`
   width: 60%;
-  max-width: 704px;
-  height: 68px;
+  max-width: 300px;
+  height: 48px;
   border-radius: 8px;
   border: 1px solid #e7e6e6;
 
@@ -11,4 +11,8 @@ export const Input = styled.input`
   font-weight: 400;
   font-size: 18px;
   color: #ffffff;
+
+  @media (min-width: 1024px) {
+    margin-right: 5px;
+  }
 `;
