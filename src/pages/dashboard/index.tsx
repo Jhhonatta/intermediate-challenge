@@ -1,6 +1,7 @@
 import { ContainerDashBoard } from "./style";
 import Search from "../../components/search";
 import ListUsers from "../../components/listUsers";
+import ButtonPagination from "../../components/buttonPagination";
 
 const Dashboard = () => {
   return (
@@ -11,6 +12,7 @@ const Dashboard = () => {
           <Search />
         </div>
         <ListUsers />
+        <ButtonPagination />
       </ContainerDashBoard>
     </>
   );
