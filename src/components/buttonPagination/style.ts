@@ -1,11 +1,14 @@
 import styled from "styled-components";
 
-export const ContainerButtonPagination = styled.div`
+interface ContainerButtonPaginationProps {
+  isSelected?: boolean;
+}
+
+export const ContainerButtonPagination = styled.div<ContainerButtonPaginationProps>`
   display: flex;
   justify-content: center;
   font-family: Roboto;
   margin-top: 15px;
-
   color: #ffffff;
 
   ul {
@@ -42,5 +45,11 @@ export const ContainerButtonPagination = styled.div`
     border-radius: 50%;
     color: #d4d4d4;
     cursor: pointer;
+    background-color: transparent;
+  }
+
+  .selected {
+    background-color: #811ac0;
+    color: #ffffff;
   }
 `;

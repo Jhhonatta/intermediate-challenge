@@ -29,7 +29,6 @@ const ListUsers = () => {
           `?page=1&results=10&seed=abc&inc=gender,name,dob,id`
         );
         setList(result.data.results);
-        console.log(list);
       } catch (error) {
         console.error("Erro ao buscar dados da API:", error);
       }

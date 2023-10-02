@@ -22,10 +22,7 @@ const ButtonPagination = () => {
             <li key={index} className="buttonContainer">
               <button
                 onClick={() => handleClick(index)}
-                style={{
-                  backgroundColor:
-                    selectedButton === index ? "#811ac0" : "transparent",
-                }}
+                className={`${selectedButton === index ? "selected" : ""}`}
               >
                 {elem}
               </button>
